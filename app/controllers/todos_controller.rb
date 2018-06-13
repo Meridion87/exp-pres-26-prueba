@@ -3,7 +3,7 @@ class TodosController < ApplicationController
     @todos = Todo.all
   end
 
-  def index
+  def new
     @todo = Todo.new
 
   end
