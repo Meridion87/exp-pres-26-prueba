@@ -10,6 +10,7 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(post_params)
+    @todo.completed = false
     @todo.save
     redirect_to todos_path
 
@@ -41,7 +42,12 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     @todo.completed = true
     @todo.save
-    redirect_to todos_path
+    redirect_to todos_list_path
+
+  end
+
+  def list
+    @todos = Todo.all
 
   end
 

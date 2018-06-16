@@ -1,7 +1,12 @@
+<!-- <h1><%= link_to "Crear tarea", todos_new_path %></h1> -->
+
 <% @todos.each do |todo| %>
-<h1> <%= link_to todo.description, todo %> </h1>
- <p> <%= todo.completed %> </p>
-<%= link_to "Show", todo %>
-<%= link_to "Edit", todo %>
-<%= link_to "Borrar", todo, method: :delete %>
+<div style="border-style: dotted;">
+  <h2> <%=todo.description%>  </h2>
+  <!-- <p> <%= todo.completed %> </p> -->
+  <%= link_to "Mostrar", todo, class: 'btn btn-primary'  %>
+  <%= link_to "Editar", update_path(todo), class: 'btn btn-warning'  %>
+  <%= link_to "Borrar", todo, method: :delete, class: 'btn btn-danger'  %>
+</div>
+
 <% end %>

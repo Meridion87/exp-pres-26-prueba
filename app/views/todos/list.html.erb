@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-lg-6">
+    <% @todos.each do |todo| %>
+      <% if todo.completed == false %>
+      <div style="border-style: dotted;">
+        <h2> <%=todo.description%> <%= link_to "Completar", complete_path(todo), class: 'btn btn-info' %> </h2>
+        <!-- <p> <%= todo.completed %> </p> -->
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="col-lg-6">
+    <% @todos.each do |todo| %>
+      <% if todo.completed == true %>
+      <div style="border-style: dotted;">
+        <h2> <%=todo.description%></h2>
+        <!-- <p> <%= todo.completed %> </p> -->
+      </div>        
+      <% end %>
+    <% end %>
+  </div>
+</div>
